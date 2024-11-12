@@ -78,7 +78,7 @@ yum update -y
 yum install python3
 pip3 install flask
 cd /home/ec2-user
-FOLDER="https://raw.githubusercontent.com/okti3535/my-projects-aws14/main/Project-001-Roman-Numerals-Converter"
+FOLDER="https://raw.githubusercontent.com/mehmetjosephuzer/my-projects-aws/refs/heads/main/Project-001-Roman-Numerals-Converter/"
 wget ${FOLDER}/app.py
 mkdir templates && cd templates
 wget ${FOLDER}/templates/index.html
@@ -87,7 +87,7 @@ cd ..
 python3 app.py
 ```
 ```bash
-aws ec2 run-instances --image-id $LATEST_AMI --count 1 --instance-type t2.micro --key-name okt-aws --security-group-ids sg-xxxxxxxxxx --tag-specifications 'ResourceType=instance,Tags=[{Key=Name,Value=roman_numbers}]' --user-data file:///home/ec2-user/userdata.sh
+aws ec2 run-instances --image-id $LATEST_AMI --count 1 --instance-type t2.micro --key-name xxxxx --security-group-ids sg-06d38132a67dc5f17 --tag-specifications 'ResourceType=instance,Tags=[{Key=Name,Value=roman_numbers}]' --user-data file:///home/ec2-user/userdata.sh
 or
 
 aws ec2 run-instances \
